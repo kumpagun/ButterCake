@@ -6,10 +6,11 @@
 class Wrapper
 {
 	
-	function wrap($text, $length)
+	function wrap($text, $length) 
 	{
-		# code...
-		return $text;
+		if (strlen($text) > $length)
+			return substr ($text, 0, $length) . "\n" . $this->wrap(substr($text, $length), $length);
+    	return $text;
 	}
 }
 
